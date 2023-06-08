@@ -5,10 +5,10 @@ import { AuthContext } from '../contexts/AuthContext';
 import { withSSRGuest } from '../utils/withSSRGuest';
 
 const Home: NextPage = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('rodrigo@rocketseat.team');
+  const [password, setPassword] = useState('123456');
 
-  const { singIn } = useContext(AuthContext);
+  const { signIn } = useContext(AuthContext);
 
   async function handleSubmit(event: FormEvent) {
     event.preventDefault();
@@ -18,7 +18,7 @@ const Home: NextPage = () => {
       password
     };
 
-    await singIn(data);
+    await signIn(data);
   }
 
   return (
